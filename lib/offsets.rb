@@ -16,10 +16,8 @@ class Offsets
   end
 
   def lettered_offsets
-    lettered_offsets = []
-    date_cypher.chars.each_with_index do |char, indx|
-      lettered_offsets << "#{(65+indx).chr} offset"
+    [*0..3].map do |int|
+      "#{(65+int).chr} offset"
     end
-    lettered_offsets
   end
 end
