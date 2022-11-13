@@ -7,12 +7,12 @@ describe Keys do
       keys = Keys.new('02715')
 
       expect(keys).to be_a Keys
-      expect(keys.five_digit_number.length).to eq 5
+      expect(keys.digit_number.length).to eq 5
     end
   end
   
   describe '#keys' do
-    it 'splits the five digit number into 4 keys' do
+    it 'splits the digit number into 4 keys' do
       keys = Keys.new('02715')
       expected = {
         'A key' => 02,
@@ -20,10 +20,23 @@ describe Keys do
         'C key' => 71,
         'D key' => 15
       }
-      
+
       expect(keys.keys.length).to eq 4
       expect(keys.keys.values.all?(Integer)).to be true
       expect(keys.keys).to eq expected
+    end
+  end
+
+  describe '#lettered_keys' do
+    it 'returns an array of lettered keys up to one less than the length of the digit_number' do
+      keys1 = Keys.new('02715')
+      keys2 = Keys.new('293012')
+
+      expect(keys1.digit_number.length).to eq 5
+      expect(keys2.digit_number.length).to eq 6
+
+      expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
+      expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key', 'F key']
     end
   end
 end
