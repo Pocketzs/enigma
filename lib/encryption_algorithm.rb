@@ -14,10 +14,10 @@ class EncryptionAlgorithm
   end
 
   def encrypt_message
-    shift_cycle = shifts.values.cycle
-    encrypted_message = message_index.map do |int|
+    sc = shift_cycle
+    message_index.map do |int|
       next int unless int.class == Integer
-      int = @character_set[(shift_cycle.next+int) % 27]
+      int = @character_set[(sc.next+int) % 27]
     end.join
   end
 
