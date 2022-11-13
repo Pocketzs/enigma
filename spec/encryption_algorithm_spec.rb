@@ -54,6 +54,14 @@ describe EncryptionAlgorithm do
         expect(ea.message_chars).to eq ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!']
       end
     end
+
+    describe '#message_index' do
+      it 'returns an array of the message characters index based on character set' do
+        ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
+
+        expect(ea.message_index).to eq [7, 4, 11, 11, 14, 26, 22, 14, 17, 11, 3, "!"]
+      end
+    end
   end
 
   describe '#shifts' do
