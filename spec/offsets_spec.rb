@@ -8,6 +8,7 @@ describe Offsets do
 
       expect(offsets).to be_a Offsets
       expect(offsets.date).to eq '040895'
+      expect(offsets.date.length).to eq 6
     end
   end
 
@@ -20,6 +21,7 @@ describe Offsets do
 
       expect(offsets1.date_cypher).to eq '1025'
       expect(offsets2.date_cypher).to eq '8884'
+      expect(offsets2.date_cypher.length).to eq 4
     end
   end
 end
