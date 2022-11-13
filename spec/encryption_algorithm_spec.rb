@@ -1,5 +1,5 @@
 require 'rspec'
-require 'encryption_algorithm_spec'
+require 'encryption_algorithm'
 
 describe EncryptionAlgorithm do
   describe '#initialize' do
