@@ -39,8 +39,10 @@ describe EncryptionAlgorithm do
   describe '#encrypt_message' do
     it 'uses the key and date to encrypt the message' do
       ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
-
+      ea2 = EncryptionAlgorithm.new({message: 'My name is Nigel', key: '02715', date: '040895'})
+      
       expect(ea.encrypt_message).to eq 'keder ohulw!'
+      expect(ea2.encrypt_message).to eq 'pysgdmxtlssglgxe'
     end
   end
 
