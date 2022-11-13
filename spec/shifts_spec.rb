@@ -20,4 +20,19 @@ describe Shifts do
       expect(shifts.lettered_shifts).to eq ['A shift', 'B shift', 'C shift', 'D shift']
     end
   end
+
+  describe 'keys' do
+    it 'returns a hash of keys' do
+      shifts = Shifts.new({key: '02715', date: '040895'})
+  
+      expected = {
+        'A key' => 91,
+        'B key' => 10,
+        'C key' => 3,
+        'D key' => 34
+      }
+  
+      expect(shifts.keys).to eq expected
+    end
+  end
 end
