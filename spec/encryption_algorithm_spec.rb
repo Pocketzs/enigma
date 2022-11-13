@@ -38,9 +38,24 @@ describe EncryptionAlgorithm do
 
   describe '#encrypt_message' do
     it 'uses the key and date to encrypt the message' do
-      ea = EncryptionAlgorithm.new({message: 'hello world', key: '02715', date: '040895'})
+      ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
 
-      expect(ea.encrypt_message('hello world')).to eq 'keder ohulw'
+      expect(ea.encrypt_message).to eq 'keder ohulw!'
+    end
+  end
+
+  describe '#shifts' do
+    it 'returns a hash of shifts based on key and date' do
+      ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
+
+      expected = {
+        'A key' => 2,
+        'B key' => 27,
+        'C key' => 71,
+        'D key' => 15
+      }
+
+      expect(ea.shifts).to eq expected
     end
   end
 end
