@@ -23,7 +23,7 @@ describe EncryptionAlgorithm do
       expect(ea.character_set.length).to eq 27
     end
 
-    it 'has a message key and date' do
+    it 'has attributes' do
       ea = EncryptionAlgorithm.new({message: 'hello world', key: '02715', date: '040895'})
       ea2 = EncryptionAlgorithm.new({message: 'my name is nigel', key: '91034', date: '131122'})
 
