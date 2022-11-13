@@ -1,7 +1,13 @@
 class EncryptionAlgorithm
-  attr_reader :character_set
+  attr_reader :message,
+              :key,
+              :date,
+              :character_set
   
-  def initialize
-    @character_set = ('a'..'z').to_a << ' '
+  def initialize(attributes)
+    @message        = attributes[:message]
+    @key            = attributes[:key]
+    @date           = attributes[:date]
+    @character_set  = ('a'..'z').to_a << ' '
   end
 end
