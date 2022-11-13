@@ -21,7 +21,7 @@ describe Shifts do
     end
   end
 
-  describe 'keys' do
+  describe '#keys' do
     it 'returns a hash of keys' do
       shifts = Shifts.new({key: '02715', date: '040895'})
   
@@ -36,7 +36,7 @@ describe Shifts do
     end
   end
 
-  describe 'offsets' do
+  describe '#offsets' do
     it 'returns a hash of offsets' do
       shifts = Shifts.new({key: '02715', date: '040895'})
   
@@ -48,6 +48,21 @@ describe Shifts do
       }
   
       expect(shifts.offsets).to eq expected
+    end
+  end
+
+  describe '#shifts' do
+    it 'adds the keys and offsets together to make a shifts hash' do
+      shifts = Shifts.new({key: '02715', date: '040895'})
+
+      expected = {
+        'A shift' => 3,
+        'B shift' => 27,
+        'C shift' => 73,
+        'D shift' => 20
+      }
+
+      expect(shifts.shifts).to eq expected
     end
   end
 end
