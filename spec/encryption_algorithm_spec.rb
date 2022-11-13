@@ -8,5 +8,19 @@ describe EncryptionAlgorithm do
 
       expect(ea).to be_a EncryptionAlgorithm
     end
+
+    it 'has a character set' do
+      ea = EncryptionAlgorithm.new
+
+      expected = [
+        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+        'i', 'j', 'k', 'l', 'm', 'o', 'p', 'q', 'r',
+        's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '
+      ]
+
+      expect(ea.character_set).to be_a Array
+      expect(ea.character_set).to eq expected
+      expect(ea.character_set.length).to eq 27
+    end
   end
 end
