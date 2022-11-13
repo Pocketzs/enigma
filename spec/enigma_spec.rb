@@ -10,7 +10,7 @@ describe Enigma do
     end
   end
 
-  describe 'encrypt' do
+  describe '#encrypt' do
     it 'returns a hash with an encrypted message key and date' do
       enigma = Enigma.new
 
@@ -27,6 +27,14 @@ describe Enigma do
 
       expect(enigma.encrypt('hello world', '02715', '040895')).to eq(expected1)
       expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq(expected2)
+    end
+  end
+
+  describe '#encrypt_message' do
+    it 'uses the key and date to encrypt the message' do
+      enigma = Enigma.new
+
+      expect(enigma.encrypt_message('Hello World!', '02715', '040895')).to eq 'keder ohulw!' 
     end
   end
 end
