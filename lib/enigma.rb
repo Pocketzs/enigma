@@ -1,7 +1,7 @@
 class Enigma
   def encrypt(message, key, date)
     {
-      encryption: 'keder ohulw',
+      encryption: encrypt_message(message),
       key: key,
       date: date
     }
