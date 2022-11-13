@@ -1,7 +1,8 @@
 require './lib/keys'
 
 class Shifts
-  attr_reader :key, :date
+  attr_reader :key, 
+              :date
 
   def initialize(attributes)
     @key = attributes[:key]
