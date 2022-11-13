@@ -24,4 +24,19 @@ describe Offsets do
       expect(offsets2.date_cypher.length).to eq 4
     end
   end
+
+  describe '#offsets' do
+    it 'splits the date cypher into 4 offsets' do
+      offsets = Offsets.new('040895')
+
+      expected = {
+        'A offset' => 1,
+        'B offset' => 0,
+        'C offset' => 2,
+        'D offset' => 5
+      }
+
+      expect(offsets.offsets).to eq expected
+    end
+  end
 end
