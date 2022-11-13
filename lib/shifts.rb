@@ -1,4 +1,5 @@
 require './lib/keys'
+require './lib/offsets'
 
 class Shifts
   attr_reader :key, 
@@ -17,5 +18,9 @@ class Shifts
 
   def keys
     Keys.new(@key).keys
+  end
+
+  def offsets
+    Offsets.new(@date).offsets
   end
 end
