@@ -11,16 +11,22 @@ describe Enigma do
   end
 
   describe 'encrypt' do
-    it 'returns a hash with a message key and date' do
+    it 'returns a hash with an encrypted message key and date' do
       enigma = Enigma.new
 
-      expected = {
+      expected1 = {
         encryption: 'keder ohulw',
         key:        '02715',
         date:       '040895'
       }
+      expected2 = {
+        encryption: 'pysgdmxtlssglgxe',
+        key:        '02715',
+        date:       '040895'
+      }
 
-      expect(enigma.encrypt('hello world', '02715', '040895')).to eq(expected)
+      expect(enigma.encrypt('hello world', '02715', '040895')).to eq(expected1)
+      expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq(expected2)
     end
   end
 end
