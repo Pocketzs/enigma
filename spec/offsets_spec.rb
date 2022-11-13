@@ -39,4 +39,13 @@ describe Offsets do
       expect(offsets.offsets).to eq expected
     end
   end
+
+  describe '#lettered_offsets' do
+    it 'returns an array of lettered offsets equal to the length of the date cypher' do
+      offsets = Offsets.new('040895')
+
+      expect(offsets.date_cypher.length).to eq 4
+      expect(offsets.lettered_offsets).to eq ['A offset', 'B offset', 'C offset', 'D offset']
+    end
+  end
 end
