@@ -59,7 +59,7 @@ describe DecryptionAlgorithm do
       it 'returns an array of the message characters index based on character set' do
         da = DecryptionAlgorithm.new({message: 'keder ohulw!', key: '02715', date: '040895'})
 
-        expect(da.message_index).to eq [7, 4, 11, 11, 14, 26, 22, 14, 17, 11, 3, "!"]
+        expect(da.message_index).to eq [10, 4, 3, 4, 17, 26, 14, 7, 20, 11, 22, "!"]
       end
     end
 
