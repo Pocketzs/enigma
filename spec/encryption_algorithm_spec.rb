@@ -47,12 +47,19 @@ describe EncryptionAlgorithm do
   describe '#shifts' do
     it 'returns a hash of shifts based on key and date' do
       ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
-
+      ea2 = EncryptionAlgorithm.new({message: 'Hello World!', key: '91034', date: '131122'})
+      
       expected = {
-        'A key' => 2,
-        'B key' => 27,
-        'C key' => 71,
-        'D key' => 15
+        'A shift' => 3,
+        'B shift' => 27,
+        'C shift' => 73,
+        'D shift' => 20
+      }
+      expected2 = {
+        'A shift' => 99,
+        'B shift' => 18,
+        'C shift' => 11,
+        'D shift' => 38
       }
 
       expect(ea.shifts).to eq expected
