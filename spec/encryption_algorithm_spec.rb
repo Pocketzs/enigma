@@ -46,6 +46,16 @@ describe EncryptionAlgorithm do
     end
   end
 
+  describe 'encrypt_message helper methods' do
+    describe '#message_chars' do
+      it 'returns an array of the messages characters downcased' do
+        ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
+
+        expect(ea.message_chars).to eq ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!']
+      end
+    end
+  end
+
   describe '#shifts' do
     it 'returns a hash of shifts based on key and date' do
       ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
