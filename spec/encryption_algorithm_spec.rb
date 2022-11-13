@@ -63,6 +63,7 @@ describe EncryptionAlgorithm do
       }
 
       expect(ea.shifts).to eq expected
+      expect(ea2.shifts).to eq expected2
     end
   end
 end
