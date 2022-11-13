@@ -1,7 +1,7 @@
 require 'rspec'
 require './lib/keys'
 
-Describe Keys do
+describe Keys do
   describe '#initialize' do
     it 'exists and has attributes' do
       keys = Keys.new('02715')
