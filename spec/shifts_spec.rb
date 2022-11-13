@@ -26,10 +26,10 @@ describe Shifts do
       shifts = Shifts.new({key: '02715', date: '040895'})
   
       expected = {
-        'A key' => 91,
-        'B key' => 10,
-        'C key' => 3,
-        'D key' => 34
+        'A key' => 2,
+        'B key' => 27,
+        'C key' => 71,
+        'D key' => 15
       }
   
       expect(shifts.keys).to eq expected
