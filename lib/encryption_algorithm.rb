@@ -29,6 +29,13 @@ class EncryptionAlgorithm
     @message.downcase.chars
   end
 
+  def message_index
+    message_chars.map do |char| 
+      next char unless character_set.index(char)
+      character_set.index(char)
+    end
+  end
+
   def shifts
     Shifts.new(key: @key, date: @date).shifts
   end
