@@ -26,6 +26,10 @@ class EncryptionAlgorithm
     end.join
   end
 
+  def message_chars
+    @message.downcase.chars
+  end
+
   def shifts
     Shifts.new(key: @key, date: @date).shifts
   end
