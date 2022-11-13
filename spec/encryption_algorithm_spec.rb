@@ -62,6 +62,25 @@ describe EncryptionAlgorithm do
         expect(ea.message_index).to eq [7, 4, 11, 11, 14, 26, 22, 14, 17, 11, 3, "!"]
       end
     end
+
+    describe '#shift_cycle' do
+      it 'loops the shift in a cycle' do
+        ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
+        
+        cycle1 = ea.shift_cycle.next
+        cycle2 = ea.shift_cycle.next
+        cycle3 = ea.shift_cycle.next
+        cycle4 = ea.shift_cycle.next
+        cycle5 = ea.shift_cycle.next
+
+        expect(ea.shift_cycle).to be_a Enumerator
+        expect(cycle1).to eq 3
+        expect(cycle2).to eq 27
+        expect(cycle3).to eq 73
+        expect(cycle4).to eq 20
+        expect(cycle5).to eq 3
+      end
+    end
   end
 
   describe '#shifts' do
