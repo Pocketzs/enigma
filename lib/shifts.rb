@@ -10,6 +10,12 @@ class Shifts
     @date = attributes[:date]
   end
 
+  def shifts
+    lettered_shifts.each_with_object({}).with_index do |(shift, hash), indx|
+      hash[shift] = keys.values[indx] + offsets.values[indx]
+    end
+  end
+
   def lettered_shifts
     [*0..3].map do |int|
       "#{(65+int).chr} shift"
