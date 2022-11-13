@@ -13,9 +13,13 @@ describe Offsets do
 
   describe '#date_cypher' do
     it 'sqaures the date and returns the last four digits' do
-      offsets = Offsets.new('040895')
+      offsets1 = Offsets.new('040895')
+      time_now = Time.new(2022, 11, 13)
+      allow(Time).to receive(:now).and_return(time_now)
+      offsets2 = Offsets.new(Time.now.strftime('%d%m%y'))
 
-      expect(offsets.date_cypher).to eq '1025'
+      expect(offsets1.date_cypher).to eq '1025'
+      expect(offsets2.date_cypher).to eq '8884'
     end
   end
 end
