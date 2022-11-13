@@ -32,6 +32,10 @@ class EncryptionAlgorithm
     end
   end
 
+  def shift_cycle
+    shifts.values.cycle
+  end
+
   def shifts
     Shifts.new(key: @key, date: @date).shifts
   end
