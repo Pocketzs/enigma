@@ -11,4 +11,12 @@ class Enigma
   def encrypt_message(message, key, date)
     EncryptionAlgorithm.new(message: message, key: key, date: date).encrypt_message
   end
+
+  def decrypt(message, key, date)
+    {
+      encryption: decrypt_message(message, key, date),
+      key:        key,
+      date:       date
+    }
+  end
 end
