@@ -14,8 +14,7 @@ class EncryptionAlgorithm
   end
 
   def encrypt_message
-    chars = @message.downcase.chars
-    message_index = chars.map do |char| 
+    message_index = message_chars.map do |char| 
       next char unless character_set.index(char)
       character_set.index(char)
     end
