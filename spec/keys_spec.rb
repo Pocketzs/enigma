@@ -36,7 +36,7 @@ describe Keys do
       expect(keys2.digit_number.length).to eq 6
 
       expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
-      expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key', 'F key']
+      expect(keys2.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key', 'E key']
     end
   end
 end
