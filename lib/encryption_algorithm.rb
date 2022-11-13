@@ -14,10 +14,6 @@ class EncryptionAlgorithm
   end
 
   def encrypt_message
-    message_index = message_chars.map do |char| 
-      next char unless character_set.index(char)
-      character_set.index(char)
-    end
     shift_cycle = shifts.values.cycle
     encrypted_message = message_index.map do |int|
       next int unless int.class == Integer
