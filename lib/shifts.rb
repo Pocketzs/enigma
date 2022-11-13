@@ -5,4 +5,10 @@ class Shifts
     @key = attributes[:key]
     @date = attributes[:date]
   end
+
+  def lettered_shifts
+    [*0..3].map do |int|
+      "#{(65+int).chr} shift"
+    end
+  end
 end
