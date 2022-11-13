@@ -12,11 +12,8 @@ class Keys
   end
 
   def lettered_keys
-    lettered_keys = []
-    @digit_number.chars.each_with_index do |char, indx|
-      break if indx == @digit_number.length - 1
-      lettered_keys << "#{(65+indx).chr} key"
+    [*0..3].map do |int|
+      "#{(65+int).chr} key"
     end
-    lettered_keys
   end
 end

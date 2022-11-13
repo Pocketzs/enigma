@@ -42,12 +42,10 @@ describe Keys do
   end
 
   describe '#lettered_keys' do
-    it 'returns an array of lettered keys up to one less than the length of the digit_number' do
+    it 'returns an array of lettered keys' do
       keys1 = Keys.new('02715')
       keys2 = Keys.new('29301')
 
-      expect(keys1.digit_number.length).to eq 5
-      expect(keys2.digit_number.length).to eq 5
       expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
       expect(keys2.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
     end
