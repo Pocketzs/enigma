@@ -35,4 +35,19 @@ describe Shifts do
       expect(shifts.keys).to eq expected
     end
   end
+
+  describe 'offsets' do
+    it 'returns a hash of offsets' do
+      shifts = Shifts.new({key: '02715', date: '040895'})
+  
+      expected = {
+        'A offset' => 1,
+        'B offset' => 0,
+        'C offset' => 2,
+        'D offset' => 5
+      }
+  
+      expect(shifts.offsets).to eq expected
+    end
+  end
 end
