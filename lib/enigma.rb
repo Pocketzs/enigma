@@ -3,8 +3,8 @@ class Enigma
   def encrypt(message, key, date)
     {
       encryption: encrypt_message(message, key, date),
-      key: key,
-      date: date
+      key:        key,
+      date:       date
     }
   end
 
