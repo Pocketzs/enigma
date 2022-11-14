@@ -1,6 +1,9 @@
 require './lib/shifts'
+require './lib/shared_class_methods'
 
 class EncryptionAlgorithm
+  include SharedClassMethods
+
   attr_reader :message,
               :key,
               :date,
@@ -34,9 +37,5 @@ class EncryptionAlgorithm
 
   def shift_cycle
     shifts.values.cycle
-  end
-
-  def shifts
-    Shifts.new(key: @key, date: @date).shifts
   end
 end
