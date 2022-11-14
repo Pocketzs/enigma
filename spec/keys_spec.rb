@@ -15,12 +15,12 @@ describe Keys do
     it 'splits the digit number into keys' do
       keys = Keys.new('02715')
       expected =
-      {
-        'A key' => 02,
-        'B key' => 27,
-        'C key' => 71,
-        'D key' => 15
-      }
+        {
+          'A key' => 02,
+          'B key' => 27,
+          'C key' => 71,
+          'D key' => 15
+        }
 
       expect(keys.keys.length).to eq 4
       expect(keys.keys.values.all?(Integer)).to be true
@@ -30,12 +30,12 @@ describe Keys do
     it 'can split a different digit number into keys' do
       keys = Keys.new('91034')
       expected =
-      {
-        'A key' => 91,
-        'B key' => 10,
-        'C key' => 3,
-        'D key' => 34
-      }
+        {
+          'A key' => 91,
+          'B key' => 10,
+          'C key' => 3,
+          'D key' => 34
+        }
 
       expect(keys.keys.length).to eq 4
       expect(keys.keys.values.all?(Integer)).to be true

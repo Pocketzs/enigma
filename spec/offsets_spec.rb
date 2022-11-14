@@ -31,19 +31,19 @@ describe Offsets do
       offsets2 = Offsets.new('131122')
 
       expected =
-      {
-        'A offset' => 1,
-        'B offset' => 0,
-        'C offset' => 2,
-        'D offset' => 5
-      }
+        {
+          'A offset' => 1,
+          'B offset' => 0,
+          'C offset' => 2,
+          'D offset' => 5
+        }
       expected2 =
-      {
-        'A offset' => 8,
-        'B offset' => 8,
-        'C offset' => 8,
-        'D offset' => 4
-      }
+        {
+          'A offset' => 8,
+          'B offset' => 8,
+          'C offset' => 8,
+          'D offset' => 4
+        }
 
       expect(offsets.offsets).to eq expected
       expect(offsets2.offsets).to eq expected2

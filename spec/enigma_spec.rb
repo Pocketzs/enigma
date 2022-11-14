@@ -15,17 +15,17 @@ describe Enigma do
       enigma = Enigma.new
 
       expected1 =
-      {
-        encryption: 'keder ohulw',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          encryption: 'keder ohulw',
+          key:        '02715',
+          date:       '040895'
+        }
       expected2 =
-      {
-        encryption: 'pysgdmxtlssglgxe',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          encryption: 'pysgdmxtlssglgxe',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.encrypt('hello world', '02715', '040895')).to eq expected1
       expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq expected2
@@ -37,11 +37,11 @@ describe Enigma do
       allow(Time).to receive(:now).and_return(Time.new(1995, 8, 4))
 
       expected =
-      {
-        encryption: 'keder ohulw',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          encryption: 'keder ohulw',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.encrypt('hello world', '02715')).to eq expected
     end
@@ -53,11 +53,11 @@ describe Enigma do
       allow(enigma).to receive(:rand).and_return(2715)
 
       expected =
-      {
-        encryption: 'keder ohulw',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          encryption: 'keder ohulw',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.encrypt('hello world')).to eq expected
     end
@@ -76,17 +76,17 @@ describe Enigma do
       enigma = Enigma.new
 
       expected1 =
-      {
-        decryption: 'hello world',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          decryption: 'hello world',
+          key:        '02715',
+          date:       '040895'
+        }
       expected2 =
-      {
-        decryption: 'my name is nigel',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          decryption: 'my name is nigel',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected1
       expect(enigma.decrypt('pysgdmxtlssglgxe', '02715', '040895')).to eq expected2
@@ -100,11 +100,11 @@ describe Enigma do
       encrypted = enigma.encrypt("hello world", "02715")
       
       expected =
-      {
-        decryption: 'hello world',
-        key:        '02715',
-        date:       '040895'
-      }
+        {
+          decryption: 'hello world',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.decrypt(encrypted[:encryption], '02715')).to eq expected
     end
