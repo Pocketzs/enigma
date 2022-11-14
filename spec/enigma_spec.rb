@@ -27,8 +27,8 @@ describe Enigma do
         date:       '040895'
       }
 
-      expect(enigma.encrypt('hello world', '02715', '040895')).to eq(expected1)
-      expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq(expected2)
+      expect(enigma.encrypt('hello world', '02715', '040895')).to eq expected1
+      expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq expected2
     end
 
     it "can encrypt a message with only a key (uses today's date)" do
@@ -88,8 +88,8 @@ describe Enigma do
         date:       '040895'
       }
 
-      expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq(expected1)
-      expect(enigma.decrypt('pysgdmxtlssglgxe', '02715', '040895')).to eq(expected2)
+      expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected1
+      expect(enigma.decrypt('pysgdmxtlssglgxe', '02715', '040895')).to eq expected2
     end
 
     it "can decrypt a message with only a key (uses today's date" do
