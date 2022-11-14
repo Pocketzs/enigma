@@ -1,10 +1,11 @@
 require './lib/enigma'
 
-message_file = ARGV[0]
-encrypted_file = ARGV[1]
+message_file    = ARGV[0]
+encrypted_file  = ARGV[1]
 
+enigma = Enigma.new
 message = File.read(message_file)
-encrypt_hash = Enigma.new.encrypt(message)
+encrypt_hash = enigma.encrypt(message)
 
 File.write(encrypted_file, encrypt_hash[:encryption])
 
