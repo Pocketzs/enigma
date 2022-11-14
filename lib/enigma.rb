@@ -1,6 +1,9 @@
 require './lib/encryption_algorithm'
 require './lib/decryption_algorithm'
+require './lib/generator'
 class Enigma
+  include Generator
+
   def encrypt(message, key = rand_key, date = today)
     {
       encryption: encrypt_message(message, key, date),
@@ -23,13 +26,5 @@ class Enigma
 
   def decrypt_message(message, key, date)
     DecryptionAlgorithm.new(message: message, key: key, date: date).decrypt_message
-  end
-
-  def today
-    Time.now.strftime('%d%m%y')
-  end
-
-  def rand_key
-    sprintf('%05d', rand(99999))
   end
 end
