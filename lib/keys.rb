@@ -13,7 +13,7 @@ class Keys
 
   def lettered_keys
     [*0..3].map do |int|
-      "#{(65+int).chr} key"
+      "#{(65 + int).chr} key"
     end
   end
 end

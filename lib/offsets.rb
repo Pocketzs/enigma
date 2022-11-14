@@ -17,7 +17,7 @@ class Offsets
 
   def lettered_offsets
     [*0..3].map do |int|
-      "#{(65+int).chr} offset"
+      "#{(65 + int).chr} offset"
     end
   end
 end

@@ -12,11 +12,13 @@ describe DecryptionAlgorithm do
     it 'has a character set' do
       da = DecryptionAlgorithm.new({message: 'keder ohulw', key: '02715', date: '040895'})
 
-      expected = [
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-        's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '
-      ]
+      expected =
+        [
+          'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+          'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+          'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+          'y', 'z', ' '
+        ]
 
       expect(da.character_set).to be_a Array
       expect(da.character_set).to eq expected
@@ -80,18 +82,20 @@ describe DecryptionAlgorithm do
       da = DecryptionAlgorithm.new({message: 'keder ohulw!', key: '02715', date: '040895'})
       da2 = DecryptionAlgorithm.new({message: 'keder ohulw!', key: '91034', date: '131122'})
       
-      expected = {
-        'A shift' => 3,
-        'B shift' => 27,
-        'C shift' => 73,
-        'D shift' => 20
-      }
-      expected2 = {
-        'A shift' => 99,
-        'B shift' => 18,
-        'C shift' => 11,
-        'D shift' => 38
-      }
+      expected =
+        {
+          'A shift' => 3,
+          'B shift' => 27,
+          'C shift' => 73,
+          'D shift' => 20
+        }
+      expected2 =
+        {
+          'A shift' => 99,
+          'B shift' => 18,
+          'C shift' => 11,
+          'D shift' => 38
+        }
 
       expect(da.shifts).to eq expected
       expect(da2.shifts).to eq expected2

@@ -14,19 +14,21 @@ describe Enigma do
     it 'returns a hash with an encrypted message key and date' do
       enigma = Enigma.new
 
-      expected1 = {
-        encryption: 'keder ohulw',
-        key:        '02715',
-        date:       '040895'
-      }
-      expected2 = {
-        encryption: 'pysgdmxtlssglgxe',
-        key:        '02715',
-        date:       '040895'
-      }
+      expected1 =
+        {
+          encryption: 'keder ohulw',
+          key:        '02715',
+          date:       '040895'
+        }
+      expected2 =
+        {
+          encryption: 'pysgdmxtlssglgxe',
+          key:        '02715',
+          date:       '040895'
+        }
 
-      expect(enigma.encrypt('hello world', '02715', '040895')).to eq(expected1)
-      expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq(expected2)
+      expect(enigma.encrypt('hello world', '02715', '040895')).to eq expected1
+      expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq expected2
     end
 
     it "can encrypt a message with only a key (uses today's date)" do
@@ -34,11 +36,12 @@ describe Enigma do
 
       allow(Time).to receive(:now).and_return(Time.new(1995, 8, 4))
 
-      expected = {
-        encryption: 'keder ohulw',
-        key:        '02715',
-        date:       '040895'
-      }
+      expected =
+        {
+          encryption: 'keder ohulw',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.encrypt('hello world', '02715')).to eq expected
     end
@@ -49,11 +52,12 @@ describe Enigma do
       allow(Time).to receive(:now).and_return(Time.new(1995, 8, 4))
       allow(enigma).to receive(:rand).and_return(2715)
 
-      expected = {
-        encryption: 'keder ohulw',
-        key:        '02715',
-        date:       '040895'
-      }
+      expected =
+        {
+          encryption: 'keder ohulw',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.encrypt('hello world')).to eq expected
     end
@@ -71,19 +75,21 @@ describe Enigma do
     it 'returns a hash with the encrypted message decrypted' do
       enigma = Enigma.new
 
-      expected1 = {
-        decryption: 'hello world',
-        key:        '02715',
-        date:       '040895'
-      }
-      expected2 = {
-        decryption: 'my name is nigel',
-        key:        '02715',
-        date:       '040895'
-      }
+      expected1 =
+        {
+          decryption: 'hello world',
+          key:        '02715',
+          date:       '040895'
+        }
+      expected2 =
+        {
+          decryption: 'my name is nigel',
+          key:        '02715',
+          date:       '040895'
+        }
 
-      expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq(expected1)
-      expect(enigma.decrypt('pysgdmxtlssglgxe', '02715', '040895')).to eq(expected2)
+      expect(enigma.decrypt('keder ohulw', '02715', '040895')).to eq expected1
+      expect(enigma.decrypt('pysgdmxtlssglgxe', '02715', '040895')).to eq expected2
     end
 
     it "can decrypt a message with only a key (uses today's date" do
@@ -93,11 +99,12 @@ describe Enigma do
 
       encrypted = enigma.encrypt("hello world", "02715")
       
-      expected = {
-        decryption: 'hello world',
-        key:        '02715',
-        date:       '040895'
-      }
+      expected =
+        {
+          decryption: 'hello world',
+          key:        '02715',
+          date:       '040895'
+        }
 
       expect(enigma.decrypt(encrypted[:encryption], '02715')).to eq expected
     end
