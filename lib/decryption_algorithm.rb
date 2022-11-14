@@ -17,7 +17,7 @@ class DecryptionAlgorithm
     sc = shift_cycle
     message_index.map do |int|
       next int unless int.class == Integer
-      int = @character_set[(int - sc.next) % 27]
+      @character_set[(int - sc.next) % 27]
     end.join
   end
 
