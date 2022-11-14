@@ -104,4 +104,13 @@ describe Enigma do
       expect(enigma.today).to eq todays_date
     end
   end
+
+  describe '#rand_key' do
+    it 'returns a 0 padded string of random 5 digit number' do
+      enigma = Enigma.new
+      allow(enigma).to receive(:rand).and_return(2715)
+
+      expect(enigma.rand_key).to eq '02715'
+    end
+  end
 end
