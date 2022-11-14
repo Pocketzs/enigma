@@ -13,7 +13,7 @@ class Enigma
     EncryptionAlgorithm.new(message: message, key: key, date: date).encrypt_message
   end
 
-  def decrypt(message, key, date)
+  def decrypt(message, key, date = (Time.now.strftime('%d%m%y')))
     {
       decryption: decrypt_message(message, key, date),
       key:        key,
