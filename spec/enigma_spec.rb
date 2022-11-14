@@ -28,6 +28,18 @@ describe Enigma do
       expect(enigma.encrypt('hello world', '02715', '040895')).to eq(expected1)
       expect(enigma.encrypt('my name is nigel', '02715', '040895')).to eq(expected2)
     end
+
+    it "can encrypt a message with only a key (uses today's date)" do
+      enigma = Enigma.new
+      allow(enigma).to receive(:now).and_return(Time.new(1995, 8, 4))
+      expected = {
+        encryption: 'keder ohulw',
+        key:        '02715',
+        date:       '040895'
+      }
+
+      expect(enigma.encrypt('hello world', '02715')).to eq(expected)
+    end
   end
 
   describe '#encrypt_message' do
