@@ -1,7 +1,7 @@
 require './lib/encryption_algorithm'
 require './lib/decryption_algorithm'
 class Enigma
-  def encrypt(message, key, date = today)
+  def encrypt(message, key = rand_key, date = today)
     {
       encryption: encrypt_message(message, key, date),
       key:        key,
