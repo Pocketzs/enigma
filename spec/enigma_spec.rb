@@ -31,7 +31,7 @@ describe Enigma do
 
     it "can encrypt a message with only a key (uses today's date)" do
       enigma = Enigma.new
-      allow(enigma).to receive(:now).and_return(Time.new(1995, 8, 4))
+      allow(Time).to receive(:now).and_return(Time.new(1995, 8, 4))
       expected = {
         encryption: 'keder ohulw',
         key:        '02715',
