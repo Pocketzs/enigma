@@ -12,10 +12,12 @@ describe EncryptionAlgorithm do
     it 'has a character set' do
       ea = EncryptionAlgorithm.new({message: 'hello world', key: '02715', date: '040895'})
 
-      expected = [
+      expected = 
+      [
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r',
-        's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' '
+        'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+        'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
+        'y', 'z', ' '
       ]
 
       expect(ea.character_set).to be_a Array
@@ -30,7 +32,7 @@ describe EncryptionAlgorithm do
       expect(ea.message).to eq 'hello world'
       expect(ea.key).to eq '02715'
       expect(ea.date).to eq '040895'
-      expect(ea2.message).to eq'my name is nigel'
+      expect(ea2.message).to eq 'my name is nigel'
       expect(ea2.key).to eq '91034'
       expect(ea2.date).to eq '131122'
     end
@@ -80,13 +82,15 @@ describe EncryptionAlgorithm do
       ea = EncryptionAlgorithm.new({message: 'Hello World!', key: '02715', date: '040895'})
       ea2 = EncryptionAlgorithm.new({message: 'Hello World!', key: '91034', date: '131122'})
       
-      expected = {
+      expected = 
+      {
         'A shift' => 3,
         'B shift' => 27,
         'C shift' => 73,
         'D shift' => 20
       }
-      expected2 = {
+      expected2 = 
+      {
         'A shift' => 99,
         'B shift' => 18,
         'C shift' => 11,
