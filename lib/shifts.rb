@@ -6,8 +6,8 @@ class Shifts
               :date
 
   def initialize(attributes)
-    @key = attributes[:key]
-    @date = attributes[:date]
+    @key   = attributes[:key]
+    @date  = attributes[:date]
   end
 
   def shifts
@@ -18,7 +18,7 @@ class Shifts
 
   def lettered_shifts
     [*0..3].map do |int|
-      "#{(65+int).chr} shift"
+      "#{(65 + int).chr} shift"
     end
   end
 
