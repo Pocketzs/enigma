@@ -57,12 +57,12 @@ describe Enigma do
       enigma = Enigma.new
 
       expected1 = {
-        encryption: 'hello world',
+        decryption: 'hello world',
         key:        '02715',
         date:       '040895'
       }
       expected2 = {
-        encryption: 'my name is nigel',
+        decryption: 'my name is nigel',
         key:        '02715',
         date:       '040895'
       }
@@ -79,7 +79,7 @@ describe Enigma do
       encrypted = enigma.encrypt("hello world", "02715")
       
       expected = {
-        encryption: 'hello world',
+        decryption: 'hello world',
         key:        '02715',
         date:       '040895'
       }
