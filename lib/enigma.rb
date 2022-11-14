@@ -24,4 +24,8 @@ class Enigma
   def decrypt_message(message, key, date)
     DecryptionAlgorithm.new(message: message, key: key, date: date).decrypt_message
   end
+
+  def today
+    Time.now.strftime('%d%m%y')
+  end
 end
