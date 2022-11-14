@@ -30,13 +30,15 @@ describe Offsets do
       offsets = Offsets.new('040895')
       offsets2 = Offsets.new('131122')
 
-      expected = {
+      expected = 
+      {
         'A offset' => 1,
         'B offset' => 0,
         'C offset' => 2,
         'D offset' => 5
       }
-      expected2 = {
+      expected2 = 
+      {
         'A offset' => 8,
         'B offset' => 8,
         'C offset' => 8,
