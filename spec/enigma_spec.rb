@@ -47,7 +47,7 @@ describe Enigma do
       enigma = Enigma.new
 
       allow(Time).to receive(:now).and_return(Time.new(1995, 8, 4))
-      allow(enigma).to recieve(:rand).and_return(2715)
+      allow(enigma).to receive(:rand).and_return(2715)
 
       expected = {
         encryption: 'keder ohulw',
