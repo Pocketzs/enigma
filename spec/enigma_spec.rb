@@ -62,7 +62,7 @@ describe Enigma do
     it 'uses the key and date to decrypt the message' do
       enigma = Enigma.new
 
-      expect(enigma.decrypt('keder ohulw!', '02715', '040895')).to eq 'hello world!'
+      expect(enigma.decrypt_message('keder ohulw!', '02715', '040895')).to eq 'hello world!'
     end
   end
 end
