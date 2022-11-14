@@ -40,7 +40,22 @@ describe Enigma do
         date:       '040895'
       }
 
-      expect(enigma.encrypt('hello world', '02715')).to eq(expected)
+      expect(enigma.encrypt('hello world', '02715')).to eq expected
+    end
+
+    it "can encrypt a message with a random key and today's date" do
+      enigma = Enigma.new
+
+      allow(Time).to receive(:now).and_return(Time.new(1995, 8, 4))
+      allow(enigma).to recieve(:rand).and_return(2715)
+
+      expected = {
+        encryption: 'keder ohulw',
+        key:        '02715',
+        date:       '040895'
+      }
+
+      expect(enigma.encrypt('hello world')).to eq expected
     end
   end
 
