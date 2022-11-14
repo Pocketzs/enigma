@@ -1,6 +1,8 @@
 require './lib/encryption_algorithm'
 require './lib/decryption_algorithm'
 require './lib/generator'
+require './lib/shared_class_methods'
+
 class Enigma
   include Generator,
           SharedClassMethods
