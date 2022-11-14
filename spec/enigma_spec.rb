@@ -95,4 +95,13 @@ describe Enigma do
       expect(enigma.decrypt_message('keder ohulw!', '02715', '040895')).to eq 'hello world!'
     end
   end
+
+  describe '#today' do
+    it "returns a formatted string of today's date" do
+      enigma = Enigma.new
+      todays_date = Time.now.strftime('%d%m%y')
+
+      expect(enigma.today).to eq todays_date
+    end
+  end
 end
