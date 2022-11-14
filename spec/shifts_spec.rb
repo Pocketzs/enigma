@@ -25,7 +25,7 @@ describe Shifts do
     it 'returns a hash of keys' do
       shifts = Shifts.new({key: '02715', date: '040895'})
   
-      expected = 
+      expected =
       {
         'A key' => 2,
         'B key' => 27,
@@ -41,7 +41,7 @@ describe Shifts do
     it 'returns a hash of offsets' do
       shifts = Shifts.new({key: '02715', date: '040895'})
   
-      expected = 
+      expected =
       {
         'A offset' => 1,
         'B offset' => 0,
@@ -58,14 +58,14 @@ describe Shifts do
       shifts = Shifts.new({key: '02715', date: '040895'})
       shifts2 = Shifts.new({key: '91034', date: '131122'})
 
-      expected = 
+      expected =
       {
         'A shift' => 3,
         'B shift' => 27,
         'C shift' => 73,
         'D shift' => 20
       }
-      expected2 = 
+      expected2 =
       {
         'A shift' => 99,
         'B shift' => 18,

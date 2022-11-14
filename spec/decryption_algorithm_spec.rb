@@ -12,7 +12,7 @@ describe DecryptionAlgorithm do
     it 'has a character set' do
       da = DecryptionAlgorithm.new({message: 'keder ohulw', key: '02715', date: '040895'})
 
-      expected = 
+      expected =
       [
         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
@@ -82,14 +82,14 @@ describe DecryptionAlgorithm do
       da = DecryptionAlgorithm.new({message: 'keder ohulw!', key: '02715', date: '040895'})
       da2 = DecryptionAlgorithm.new({message: 'keder ohulw!', key: '91034', date: '131122'})
       
-      expected = 
+      expected =
       {
         'A shift' => 3,
         'B shift' => 27,
         'C shift' => 73,
         'D shift' => 20
       }
-      expected2 = 
+      expected2 =
       {
         'A shift' => 99,
         'B shift' => 18,

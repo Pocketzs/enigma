@@ -14,7 +14,7 @@ describe Keys do
   describe '#keys' do
     it 'splits the digit number into keys' do
       keys = Keys.new('02715')
-      expected = 
+      expected =
       {
         'A key' => 02,
         'B key' => 27,
@@ -29,7 +29,7 @@ describe Keys do
 
     it 'can split a different digit number into keys' do
       keys = Keys.new('91034')
-      expected = 
+      expected =
       {
         'A key' => 91,
         'B key' => 10,
