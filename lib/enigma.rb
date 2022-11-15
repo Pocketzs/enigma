@@ -22,4 +22,12 @@ class Enigma
       date:       date
     }
   end
+
+  def crack(message, date = today)
+    {
+      decryption: crack_message(message, date),
+      key:        key,
+      date:       date
+    }
+  end
 end
