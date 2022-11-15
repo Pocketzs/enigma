@@ -42,8 +42,7 @@ class CrackAlgorithm
     until end_check?
       alternating_series
     end
-    @final_key_array << @key
-    decrypt_message(@message, @key, @date)
+    [decrypt_message(@message, @key, @date), @key]
   end
 
   def alternating_series
@@ -59,10 +58,6 @@ class CrackAlgorithm
   def incrementer
     @upper_bound -= 1
     @counter += 1
-  end
-
-  def final_key
-    @final_key_array[0]
   end
 
   def end_check?
