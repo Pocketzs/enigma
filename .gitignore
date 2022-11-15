@@ -11,7 +11,7 @@
 /tmp/
 encrypted.txt
 decrypted.txt
-
+cracked.txt
 # Used by dotenv library to load environment variables.
 # .env
 
