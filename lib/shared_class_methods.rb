@@ -21,4 +21,12 @@ module SharedClassMethods
   def decrypt_message(message, key, date)
     DecryptionAlgorithm.new(message: message, key: key, date: date).decrypt_message
   end
+
+  def crack_message(message, date)
+    CrackAlgorithm.new(message: message, date: date).crack_message[0]
+  end
+
+  def crack_key(message, date)
+    CrackAlgorithm.new(message: message, date: date).crack_message[1]
+  end
 end
