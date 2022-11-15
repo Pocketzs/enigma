@@ -21,8 +21,8 @@ describe CrackAlgorithm do
       ca = CrackAlgorithm.new(message: 'vjqtbeaweqihssi' , date: '291018')
       ca2 = CrackAlgorithm.new(message: 'cfjoaxlbpyofqvvjiehauxlxpqkopbqn' , date: '151122')
 
-      expect(ca.crack_message).to eq 'hello world end'
-      expect(ca2.crack_message).to eq 'nigel is always there in the end'
+      expect(ca.crack_message).to eq ["hello world end", "08304"]
+      expect(ca2.crack_message).to eq ["nigel is always there in the end", "89760"]
     end
 
     # the following is impossible to do if the encrypted message did not use todays date
@@ -79,18 +79,6 @@ describe CrackAlgorithm do
       ca.alternating_series
       expect(ca.key).to eq '00001'
       expect(ca.counter).to eq 2
-    end
-  end
-
-  describe '#final_key' do
-    it 'returns the final key used to crack the encryption' do
-      ca = CrackAlgorithm.new(message: 'vjqtbeaweqihssi' , date: '291018')
-
-      code = '08304'
-      expect(ca.decrypt_message(ca.message, code, ca.date)).to eq 'hello world end'
-
-      expect(ca.crack_message).to eq 'hello world end'
-      expect(ca.final_key).to eq code
     end
   end
 
