@@ -16,7 +16,7 @@ class Offsets
   end
 
   def offsets
-    lettered_hash_keys.each_with_object({}).with_index do |(offset,hash), indx|
+    lettered_hash_keys.each_with_object({}).with_index do |(offset, hash), indx|
       hash[offset] = date_cypher[indx].to_i
     end
   end
