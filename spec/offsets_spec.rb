@@ -58,4 +58,20 @@ describe Offsets do
       expect(offsets.lettered_hash_keys).to eq ['A offset', 'B offset', 'C offset', 'D offset']
     end
   end
+
+  describe '#class_name' do
+    it 'returns the class name' do
+      offsets = Offsets.new('040895')
+
+      expect(offsets.class_name).to eq 'Offsets'
+    end
+  end
+
+  describe '#format_class_name' do
+    it 'returns the class name downcased and singular' do
+      offsets = Offsets.new('040895')
+  
+      expect(offsets.format_class_name).to eq 'offset'
+    end
+  end
 end
