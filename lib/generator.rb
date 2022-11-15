@@ -7,6 +7,6 @@ module Generator
   end
 
   def rand_key
-    sprintf('%05d', rand(99_999))
+    format('%05d', rand(99_999))
   end
 end
