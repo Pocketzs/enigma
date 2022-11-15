@@ -52,4 +52,20 @@ describe Keys do
       expect(keys2.lettered_hash_keys).to eq ['A key', 'B key', 'C key', 'D key']
     end
   end
+
+  describe '#class_name' do
+    it 'returns the class name' do
+      keys = Keys.new('02715')
+  
+      expect(keys.class_name).to eq 'Keys'
+    end
+  end
+
+  describe '#format_class_name' do
+    it 'returns the class name downcased and singular' do
+      keys = Keys.new('02715')
+  
+      expect(keys.format_class_name).to eq 'key'
+    end
+  end
 end
