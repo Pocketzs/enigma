@@ -89,7 +89,7 @@ describe Shifts do
   describe '#format_class_name' do
     it 'returns the class name downcased and singular' do
       shifts = Shifts.new({key: '02715', date: '040895'})
-  
+      
       expect(shifts.format_class_name).to eq 'shift'
     end
   end
