@@ -1,5 +1,6 @@
 require './lib/encryption_algorithm'
 require './lib/decryption_algorithm'
+require './lib/crack_algorithm'
 require './lib/generator'
 require './lib/shared_class_methods'
 
@@ -26,7 +27,7 @@ class Enigma
   def crack(message, date = today)
     {
       decryption: crack_message(message, date),
-      key:        key,
+      key:        crack_key(message, date),
       date:       date
     }
   end
