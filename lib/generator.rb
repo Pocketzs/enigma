@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Methods for generating dynamic values
 module Generator
   def today
     Time.now.strftime('%d%m%y')
