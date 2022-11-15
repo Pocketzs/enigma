@@ -56,7 +56,7 @@ describe Keys do
   describe '#class_name' do
     it 'returns the class name' do
       keys = Keys.new('02715')
-  
+
       expect(keys.class_name).to eq 'Keys'
     end
   end
@@ -64,7 +64,7 @@ describe Keys do
   describe '#format_class_name' do
     it 'returns the class name downcased and singular' do
       keys = Keys.new('02715')
-  
+      
       expect(keys.format_class_name).to eq 'key'
     end
   end
