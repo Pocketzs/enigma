@@ -7,7 +7,11 @@ class CrackAlgorithm
   include SharedClassMethods
 
   attr_reader :message,
-              :date
+              :date,
+              :key,
+              :counter,
+              :upper_bound,
+              :final_key_array
 
   def initialize(attributes)
     @message  = attributes[:message]
