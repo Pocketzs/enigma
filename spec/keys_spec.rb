@@ -43,13 +43,29 @@ describe Keys do
     end
   end
 
-  describe '#lettered_keys' do
+  describe '#lettered_hash_keys' do
     it 'returns an array of lettered keys' do
       keys1 = Keys.new('02715')
       keys2 = Keys.new('29301')
 
-      expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
-      expect(keys2.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
+      expect(keys1.lettered_hash_keys).to eq ['A key', 'B key', 'C key', 'D key']
+      expect(keys2.lettered_hash_keys).to eq ['A key', 'B key', 'C key', 'D key']
+    end
+  end
+
+  describe '#class_name' do
+    it 'returns the class name' do
+      keys = Keys.new('02715')
+
+      expect(keys.class_name).to eq 'Keys'
+    end
+  end
+
+  describe '#format_class_name' do
+    it 'returns the class name downcased and singular' do
+      keys = Keys.new('02715')
+      
+      expect(keys.format_class_name).to eq 'key'
     end
   end
 end

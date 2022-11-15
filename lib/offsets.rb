@@ -1,4 +1,10 @@
+# frozen_string_literal: true
+
+require './lib/cypher_utilities'
+
 class Offsets
+  include CypherUtilities
+
   attr_reader :date
 
   def initialize(date)
@@ -10,14 +16,8 @@ class Offsets
   end
 
   def offsets
-    lettered_offsets.each_with_object({}).with_index do |(offset,hash), indx|
+    lettered_hash_keys.each_with_object({}).with_index do |(offset, hash), indx|
       hash[offset] = date_cypher[indx].to_i
-    end
-  end
-
-  def lettered_offsets
-    [*0..3].map do |int|
-      "#{(65 + int).chr} offset"
     end
   end
 end
