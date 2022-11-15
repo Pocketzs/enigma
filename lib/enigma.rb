@@ -4,8 +4,8 @@ require './lib/generator'
 require './lib/shared_class_methods'
 
 class Enigma
-  include Generator,
-          SharedClassMethods
+  include Generator
+  include SharedClassMethods
 
   def encrypt(message, key = rand_key, date = today)
     {

@@ -4,8 +4,8 @@ require './lib/shared_class_methods'
 require './lib/cypher_utilities'
 
 class Shifts
-  include SharedClassMethods,
-          CypherUtilities
+  include SharedClassMethods
+  include CypherUtilities
 
   attr_reader :key, 
               :date
