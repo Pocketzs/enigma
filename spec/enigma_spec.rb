@@ -140,24 +140,24 @@ describe Enigma do
     it 'can crack an encryption with a date' do
       enigma = Enigma.new
 
-      encrypted = enigma.encrypt("hello world end", "08304", "291018")
+      encrypted = enigma.encrypt('hello world end', '08304', '291018')
       expected1 =
         {
-          encryption: "vjqtbeaweqihssi",
-          key:        "08304",
-          date:       "291018"
+          encryption: 'vjqtbeaweqihssi',
+          key:        '08304',
+          date:       '291018'
         }
 
       expect(encrypted).to eq expected1
 
       expected2 =
         {
-          decryption: "hello world end",
-          key:        "08304",
-          date:       "291018"
+          decryption: 'hello world end',
+          key:        '08304',
+          date:       '291018'
         }
 
-      expect(enigma.crack("vjqtbeaweqihssi", "291018")).to eq expected2
+      expect(enigma.crack('vjqtbeaweqihssi', '291018')).to eq expected2
     end
   end
 end
