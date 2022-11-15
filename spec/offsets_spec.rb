@@ -70,7 +70,7 @@ describe Offsets do
   describe '#format_class_name' do
     it 'returns the class name downcased and singular' do
       offsets = Offsets.new('040895')
-  
+      
       expect(offsets.format_class_name).to eq 'offset'
     end
   end
