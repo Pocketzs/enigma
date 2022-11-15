@@ -80,7 +80,7 @@ describe Shifts do
 
   describe '#class_name' do
     it 'returns the class name' do
-      shifts = Shifts.new({key: '02715', date: '040895'})
+      shifts = Shifts.new({ key: '02715', date: '040895' })
 
       expect(shifts.class_name).to eq 'Shifts'
     end
@@ -88,8 +88,8 @@ describe Shifts do
 
   describe '#format_class_name' do
     it 'returns the class name downcased and singular' do
-      shifts = Shifts.new({key: '02715', date: '040895'})
-      
+      shifts = Shifts.new({ key: '02715', date: '040895' })
+
       expect(shifts.format_class_name).to eq 'shift'
     end
   end
