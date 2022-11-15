@@ -9,6 +9,10 @@ describe CrackAlgorithm do
       expect(ca).to be_a CrackAlgorithm
       expect(ca.message).to eq 'vjqtbeaweqihssi'
       expect(ca.date).to eq '291018'
+      expect(ca.key).to eq '00000'
+      expect(ca.counter).to eq 0
+      expect(ca.upper_bound).to eq 99999
+      expect(ca.final_key_array).to eq []
     end
   end
 
