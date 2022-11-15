@@ -43,13 +43,13 @@ describe Keys do
     end
   end
 
-  describe '#lettered_keys' do
+  describe '#lettered_hash_keys' do
     it 'returns an array of lettered keys' do
       keys1 = Keys.new('02715')
       keys2 = Keys.new('29301')
 
-      expect(keys1.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
-      expect(keys2.lettered_keys).to eq ['A key', 'B key', 'C key', 'D key']
+      expect(keys1.lettered_hash_keys).to eq ['A key', 'B key', 'C key', 'D key']
+      expect(keys2.lettered_hash_keys).to eq ['A key', 'B key', 'C key', 'D key']
     end
   end
 end

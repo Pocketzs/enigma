@@ -12,12 +12,12 @@ describe Shifts do
     end
   end
 
-  describe '#lettered_shifts' do
+  describe '#lettered_hash_keys' do
     it 'returns an array of lettered shifts keys' do
       shifts = Shifts.new({key: '02715', date: '040895'})
 
-      expect(shifts.lettered_shifts.length).to eq 4
-      expect(shifts.lettered_shifts).to eq ['A shift', 'B shift', 'C shift', 'D shift']
+      expect(shifts.lettered_hash_keys.length).to eq 4
+      expect(shifts.lettered_hash_keys).to eq ['A shift', 'B shift', 'C shift', 'D shift']
     end
   end
 
