@@ -12,12 +12,12 @@ describe Shifts do
     end
   end
 
-  describe '#lettered_shifts' do
+  describe '#lettered_hash_keys' do
     it 'returns an array of lettered shifts keys' do
       shifts = Shifts.new({key: '02715', date: '040895'})
 
-      expect(shifts.lettered_shifts.length).to eq 4
-      expect(shifts.lettered_shifts).to eq ['A shift', 'B shift', 'C shift', 'D shift']
+      expect(shifts.lettered_hash_keys.length).to eq 4
+      expect(shifts.lettered_hash_keys).to eq ['A shift', 'B shift', 'C shift', 'D shift']
     end
   end
 
@@ -75,6 +75,22 @@ describe Shifts do
 
       expect(shifts.shifts).to eq expected
       expect(shifts2.shifts).to eq expected2
+    end
+  end
+
+  describe '#class_name' do
+    it 'returns the class name' do
+      shifts = Shifts.new({ key: '02715', date: '040895' })
+
+      expect(shifts.class_name).to eq 'Shifts'
+    end
+  end
+
+  describe '#format_class_name' do
+    it 'returns the class name downcased and singular' do
+      shifts = Shifts.new({ key: '02715', date: '040895' })
+
+      expect(shifts.format_class_name).to eq 'shift'
     end
   end
 end
