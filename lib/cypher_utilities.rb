@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # methods common to keys offsets and shifts classes
 
 module CypherUtilities
