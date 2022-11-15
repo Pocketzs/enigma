@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Methods that utilize class instance for functionality
 module SharedClassMethods
   def keys
     Keys.new(@key).keys
