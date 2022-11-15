@@ -11,4 +11,12 @@ describe CrackAlgorithm do
       expect(ca.date).to eq '291018'
     end
   end
+
+  describe '#crack_message' do
+    it 'can crack a message with a date' do
+      ca = CrackAlgorithm.new(message: 'vjqtbeaweqihssi' , date: '291018')
+
+      expect(ca.crack_message).to eq 'hello world end'
+    end
+  end
 end
