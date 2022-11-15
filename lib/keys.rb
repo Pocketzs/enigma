@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './lib/cypher_utilities'
 
 class Keys
