@@ -26,8 +26,7 @@ class CrackAlgorithm
   #   until decrypt_message(@message, @key, @date)[-4..-1] == " end"
   #     @key = format('%05d', @key.to_i + 1)
   #   end
-  #   @final_key = @key
-  #   decrypt_message(@message, @key, @date)
+  #   [decrypt_message(@message, @key, @date), @key]
   # end
 
   # def crack_message
